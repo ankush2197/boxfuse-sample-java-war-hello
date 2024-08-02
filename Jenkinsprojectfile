@@ -33,7 +33,7 @@ pipeline {
                 deployToTomcat('13.127.25.28', 'tomcat', 'tomcat', 'http://13.127.25.28:8080/manager/text', '/boxfuse-sample-java-war-hello', 'Dev')
             }
         }
-        stage("Deploy to QA") {
+        stage("Deploy to UAT") {
             when {
                 expression { params.BRANCH_NAME == 'fe/UAT' }
             }
