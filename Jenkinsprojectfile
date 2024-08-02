@@ -35,7 +35,7 @@ pipeline {
         }
         stage("Deploy to UAT") {
             when {
-                expression { params.BRANCH_NAME == 'fe/UAT' }
+                expression { params.BRANCH_NAME == 'fe/qa' }
             }
             steps {
                 deployToTomcat('13.127.94.219', 'tomcat', 'tomcat', 'http://13.127.94.219:8080/manager/text', '/boxfuse-sample-java-war-hello', 'UAT')
