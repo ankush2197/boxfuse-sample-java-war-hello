@@ -1,7 +1,7 @@
 pipeline {
     agent any
     parameters {
-        string(name: 'BRANCH_NAME', defaultValue: 'fe/dev', description: 'Specify the branch name to deploy')
+        string(name: 'BRANCH_NAME', defaultValue: 'fe/qa', description: 'Specify the branch name to deploy')
     }
     stages {
         stage("GIT checkout") {
