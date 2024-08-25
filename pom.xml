@@ -17,6 +17,10 @@
                 <maven.compiler.target>${java.version}</maven.compiler.target>
 
 	</properties>
+    <properties>
+    <sonar.login>squ_d93b200d6e63d42ae7ca56f2cae57e979d196d5b</sonar.login>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>javax.servlet</groupId>
