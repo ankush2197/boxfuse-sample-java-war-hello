@@ -13,7 +13,9 @@ pipeline {
 
         stage("checkout from SCM"){
                 steps{
-                      git branch: 'main' crendentialsId: 'github' , url: 'https://github.com/ankush2197/boxfuse-sample-java-war-hello.git'
+                      git url: 'https://github.com/ankush2197/boxfuse-sample-java-war-hello.git',
+                      branch: 'main',
+                      credentialsId: 'github'
                      }
         }
 
