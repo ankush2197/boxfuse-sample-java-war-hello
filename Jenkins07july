@@ -1,0 +1,32 @@
+pipeline {
+    agent { label 'Jenkins-agent'}
+    tool {
+        jdk 'java21'
+        maven 'Maven3'
+   }
+   stages{
+        stages("cleanup the workspace"){
+            steps{
+              CleanWs()
+                 }    
+        } 
+
+        stage("checkout from SCM"){
+                steps{
+                      git branch: 'main' crendentialsId: 'github' , url: 'https://github.com/ankush2197/boxfuse-sample-java-war-hello.git'
+                     }
+        }
+
+        stage("Build application"){
+                steps{
+                    sh "mvn clean package"
+                }
+        }
+
+        stage("Test application"){
+                steps{
+                    sh "mvn test"
+                }
+           } 
+     }
+}
